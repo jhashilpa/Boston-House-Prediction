@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Predict House Price</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <table>
+                <tr>
+                    <td>
+                         <input type="text" name="CRIM" id="CRIM" placeholder="per capita crime rate by town">
+                    </td>
+                    <td>
+                          <input type="text" name="ZN" id="ZN" placeholder="proportion of residential land zoned ">
+                    </td>
+                    <td>
+                         <input type="text" name="INDUS" id="INDUS" placeholder="proportion of non-retail business">
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                        <input type="text" name="CHAS" id="CHAS" placeholder="if tract bounds">
+
+                    </td>
+                    <td>
+                          <input type="text" name="NOX" id="NOX"   placeholder="nitric oxides concentration">
+                    </td>
+                    <td>
+                         <input type="text" name="RM" id="RM" placeholder="average text of rooms per dwelling">
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                         <input type="text" name="AGE" id="AGE" placeholder=" proportion of owner-occupied units built prior to 1940">
+                    </td>
+                    <td>
+                          <input type="text" name="DIS" id="DIS" placeholder="weighted distances to five Boston employment center ">
+                    </td>
+                    <td>
+                         <input type="text" name="RAD" id="RAD" placeholder="index of accessibility to radial highways">
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>
+                         <input type="text" name="TAX" id="TAX" placeholder="full-value property-tax rate per $10,00">
+                    </td>
+                    <td>
+                          <input type="text" name="PTRATIO" id="PTRATIO" placeholder="pupil-teacher ratio by town ">
+                    </td>
+                    <td>
+                         <input type="text" name="B" id="B" placeholder="proportion of blacks by town">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                     <td>
+                         <input type="text" name="LSTAT" id="LSTAT" placeholder=" % lower status of the population">
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                           <input type="submit" value="Predict">
+                    </td>
+                    <td></td>
+                </tr>
+
+
+
+            </table>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
